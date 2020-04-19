@@ -255,6 +255,7 @@ class BaseTestCase(unittest.TestCase):
             kwargs['fork'] = True
         self.cmd('mount', location, mountpoint, *options, **kwargs)
         if kwargs.get('exit_code', EXIT_SUCCESS) == EXIT_ERROR:
+            raise Exception("lala")
             # If argument `exit_code = EXIT_ERROR`, then this call
             # is testing the behavior of an unsuccessful mount and
             # we must not continue, as there is no mount to work

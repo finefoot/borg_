@@ -59,12 +59,3 @@ before_install: # Abort installation and don't run tests for pull requests if co
 install: ./.travis/install.sh
 
 script: ./.travis/run.sh
-
-after_success: ./.travis/upload_coverage.sh
-
-notifications:
-    irc:
-        channels:
-            - "irc.freenode.org#borgbackup"
-        use_notice: true
-        skip_join: true
